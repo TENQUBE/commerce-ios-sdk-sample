@@ -54,8 +54,8 @@ extension ViewController: UITableViewDelegate {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "commerceTVC") as? CommerceTableViewController else { return }
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 2 {
-//            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "scrapVC") as? ScrapViewController else { return }
-//            self.navigationController?.pushViewController(vc, animated: true)
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "scrapVC") as? ScrapViewController else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 3 {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "scrapingUserVC") as? ScrapingUserViewController else { return }
             self.navigationController?.pushViewController(vc, animated: true)

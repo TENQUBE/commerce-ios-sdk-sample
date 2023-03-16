@@ -46,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .setLayer(layer)
                 .setLogger(logger)
                 .build()
+            
+            scrapService?.initialize(completion: { err in
+                print(err)
+            })
         } catch {
             print(error)
         }
