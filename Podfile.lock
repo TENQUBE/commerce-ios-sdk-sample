@@ -1,0 +1,53 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Commerce (0.2.7):
+    - Alamofire
+    - CryptoSwift
+    - RealmSwift
+    - SwiftLint
+    - SwiftSoup
+    - SwiftyJSON
+  - CryptoSwift (1.6.0)
+  - Kingfisher (7.4.1)
+  - Realm (10.33.0):
+    - Realm/Headers (= 10.33.0)
+  - Realm/Headers (10.33.0)
+  - RealmSwift (10.33.0):
+    - Realm (= 10.33.0)
+  - SwiftLint (0.50.3)
+  - SwiftSoup (2.4.3)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Commerce (from `../../commerce/commerce-ios-sdk`)
+  - Kingfisher (~> 7.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CryptoSwift
+    - Kingfisher
+    - Realm
+    - RealmSwift
+    - SwiftLint
+    - SwiftSoup
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Commerce:
+    :path: "../../commerce/commerce-ios-sdk"
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Commerce: 171d6daf7feb161e957fff63332727c261f3c48f
+  CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
+  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  Realm: d4f810e161fa2c2c589b9860b6eb09238deacd73
+  RealmSwift: cef9946f09f2333a8f2ac8bac4f8de52fb9f5ac3
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  SwiftSoup: 3384f2e618cfc1b3cbc7852c16692fe8de13fb8f
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 642caae1fbfc665544eef375a7a06992be09fcea
+
+COCOAPODS: 1.11.2

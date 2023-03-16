@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Commerce
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var scrapService: ScrapService?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        initSdk()
+        
         return true
     }
 
@@ -31,6 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func initSdk() {
+        let layer = "dev"
+        let logger = true
+        let demoApiKey = "Nrcoz4wo1Z8mvEuyZzcFt3QUu3cCKpjC4TtijITZ"
+        
+        do {
+            scrapService = try ServiceBuilder()
+                .setApiKey(demoApiKey)
+                .setLayer(layer)
+                .setLogger(logger)
+                .build()
+        } catch {
+            print(error)
+        }
+    }
 }
 
