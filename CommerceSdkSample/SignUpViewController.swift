@@ -1,3 +1,4 @@
+
 //
 //  SignUpViewController.swift
 //  CommerceSdkSample
@@ -41,22 +42,16 @@ class SignUpViewController: UIViewController {
         })
         // Do any additional setup after loading the view.
         
-        setViews()
+        setPickerViews()
         
         self.idTextField.text = UserDefaults.standard.string(forKey: PREF_USER_ID)
         
         self.birthTextField.text = UserDefaults.standard.string(forKey: PREF_USER_BIRTH)
         
         self.genderTextField.text = UserDefaults.standard.string(forKey: PREF_USER_GENDER)
-        
-        if let id = self.idTextField.text {
-            if id.count > 0 {
-                startButton.sendActions(for: .touchUpInside)
-            }
-        }
     }
     
-    func setViews(){
+    func setPickerViews(){
         let birthPickerView = UIPickerView()
         let genderPickerView = UIPickerView()
         birthPickerView.delegate = self
@@ -130,7 +125,7 @@ class SignUpViewController: UIViewController {
             UserDefaults.standard.set(_birth, forKey: PREF_USER_BIRTH)
             UserDefaults.standard.set(_gender, forKey: PREF_USER_GENDER)
             DispatchQueue.main.async {
-                self.dismiss(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         })
     }

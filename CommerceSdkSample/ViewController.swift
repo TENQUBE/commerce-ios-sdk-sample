@@ -1,3 +1,5 @@
+
+
 //
 //  ViewController.swift
 //  CommerceSdkSample
@@ -22,8 +24,26 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         
         // Do any additional setup after loading the view.
+        initUser()
+        
+        self.tableView.reloadData()
+        
+    }
+    
+    func initUser(){
+        UserDefaults.standard.removeObject(forKey: PREF_USER_ID)
+        UserDefaults.standard.removeObject(forKey:  PREF_USER_BIRTH)
+        UserDefaults.standard.removeObject(forKey:  PREF_USER_GENDER)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.reloadData()
     }
 }
+
+
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
