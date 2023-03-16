@@ -122,6 +122,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		69AE82F329C30A9D00BE2A7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				69E9067529C035A900AEA423 /* ViewController.swift */,
+				69ADB8AF29C2145300963302 /* SignUpViewController.swift */,
+				69ADB8B329C2CA4500963302 /* CommerceTableViewController.swift */,
+				69ADB8B529C2CDF400963302 /* CommerceTableViewCell.swift */,
+				69ADB8B729C2CE6F00963302 /* ScrapViewController.swift */,
+				69AE82EF29C2E31100BE2A7F /* ScrapingUsersViewController.swift */,
+				69AE82F129C2E49800BE2A7F /* ScrapingUserTableViewCell.swift */,
+				69ADB8B929C2D27E00963302 /* OrderViewController.swift */,
+				69AE82ED29C2D40100BE2A7F /* OrderTableViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		69E9066529C035A900AEA423 = {
 			isa = PBXGroup;
 			children = (
@@ -147,22 +163,14 @@
 		69E9067029C035A900AEA423 /* CommerceSdkSample */ = {
 			isa = PBXGroup;
 			children = (
+				69AE82F329C30A9D00BE2A7F /* ViewController */,
 				69E9067129C035A900AEA423 /* AppDelegate.swift */,
 				69E9067329C035A900AEA423 /* SceneDelegate.swift */,
-				69E9067529C035A900AEA423 /* ViewController.swift */,
-				69ADB8AF29C2145300963302 /* SignUpViewController.swift */,
-				69ADB8B729C2CE6F00963302 /* ScrapViewController.swift */,
-				69ADB8B329C2CA4500963302 /* CommerceTableViewController.swift */,
-				69ADB8B529C2CDF400963302 /* CommerceTableViewCell.swift */,
+				69ADB8B129C2C59800963302 /* Constants.swift */,
 				69E9067729C035A900AEA423 /* Main.storyboard */,
 				69E9067A29C035AB00AEA423 /* Assets.xcassets */,
 				69E9067C29C035AB00AEA423 /* LaunchScreen.storyboard */,
 				69E9067F29C035AB00AEA423 /* Info.plist */,
-				69ADB8B129C2C59800963302 /* Constants.swift */,
-				69ADB8B929C2D27E00963302 /* OrderViewController.swift */,
-				69AE82ED29C2D40100BE2A7F /* OrderTableViewCell.swift */,
-				69AE82EF29C2E31100BE2A7F /* ScrapingUsersViewController.swift */,
-				69AE82F129C2E49800BE2A7F /* ScrapingUserTableViewCell.swift */,
 			);
 			path = CommerceSdkSample;
 			sourceTree = "<group>";
