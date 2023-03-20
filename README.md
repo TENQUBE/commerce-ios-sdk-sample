@@ -75,7 +75,7 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
 
 5. 커머스 로그인
 ```
-  scrapService?.startLogin(id:  _id, pwd: _pwd, commerceId: _commerceId, completion: { err in          
+  scrapService?.startLogin(id:  "testId", pwd: "testPwd", commerceId: "commerceId", completion: { err in          
         if err != nil {
         
         } else {
@@ -87,7 +87,7 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
 
 6. 커머스 스크랩
 ```
-  scrapService?.startScrapingOrder(id: _id, pwd: _pwd, commerceId: _commerceId, completion: { err, scrapingResut in
+  scrapService?.startScrapingOrder(id: "testId", pwd: "testPwd", commerceId: "commerceId", completion: { err, scrapingResut in
         if err != nil {
         
         } else {
