@@ -119,3 +119,39 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
         }
     })
 ```
+
+Sample Test
+1. 기능 목록
+
+![image](https://user-images.githubusercontent.com/3009734/226293234-da0638eb-7f0a-4c24-8c40-4a8e0febcb0d.png)
+
+
+2. SignUp
+- 아이디, 태어난 해, 성별을 입력합니다.
+
+![image](https://user-images.githubusercontent.com/3009734/226293465-748e7995-88b9-4ed3-98a0-9b10e6c87be4.png)
+
+
+3. GetCommerces
+- 커머스 목록을 가져옵니다.
+
+![image](https://user-images.githubusercontent.com/3009734/226293561-f95a3d3f-3e4b-46bb-9e0e-e801f75ab1ac.png)
+
+
+4. Scrap
+- startLogin -> startScrapingOrder 순서로 호출하여 커머스 주문내역 스크랩을 합니다.
+
+![image](https://user-images.githubusercontent.com/3009734/226293755-81ced1fa-83f5-4f2b-9499-397561ee38d8.png)
+
+
+5. GetScrapingUsers
+- 로그인 정보가 저장된 커머스 목록을 가져옵니다.
+
+![image](https://user-images.githubusercontent.com/3009734/226295209-f685b9df-b72b-4c6f-b024-4f66b7ca052d.png)
+
+
+6. GetOrders
+- 스크랩된 주문 목록을 가져옵니다.
+
+![image](https://user-images.githubusercontent.com/3009734/226296569-d2c9cd3b-15c0-4a19-949f-888101c03f41.png)
+
