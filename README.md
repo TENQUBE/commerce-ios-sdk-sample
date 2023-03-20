@@ -5,7 +5,7 @@
 
 Installation
 
-CocoaPods
+- CocoaPods
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '15.0'
