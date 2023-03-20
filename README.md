@@ -129,7 +129,7 @@ Sample Test
 2. SignUp
 - 아이디, 태어난 해, 성별을 입력합니다.
 
-![image](https://user-images.githubusercontent.com/3009734/226298645-feefcfd4-d145-4ec2-8702-aa5275c0ee67.png)
+![image](https://user-images.githubusercontent.com/3009734/226299486-ae0a1f42-5280-43bf-9431-3f80bb1109a0.png)
 
 
 3. GetCommerces
