@@ -147,7 +147,7 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
         })
      } catch {
      } 
-  </tr>
+   </tr>
   <tr>
     <td>설명</td>
   </tr>
@@ -158,6 +158,37 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th width="30%">사용 예시</th>
+    <th width="30%">스크린샷</th>
+  </tr>
+  <tr>
+    <td>초기화</td>
+    <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226299486-ae0a1f42-5280-43bf-9431-3f80bb1109a0.png"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+      scrapService?.signUp(clientId: "uuidString",
+         birth: 1990, 
+         gender: .Female, 
+         completion: { err in
+        if err != nil {
+
+        } else {
+          print("signUp done")
+        }
+      })
+   </tr>
+  <tr>
+    <td>설명</td>
+  </tr>
+  <tr>
+    <td width="30%"><div class="highlight highlight-source-swift"><pre>
+      전달받은 apiKey 정보를 입력하새 Builder를 이용해 객체를 생성합니다.
+    </pre></div></td>
+  </tr>
+</table>
 
 # Sample Test
 1. 기능 목록
