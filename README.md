@@ -17,108 +17,6 @@ end
 ```
 
 
-
-# Use-case
-1. 초기화
-```
-  var scrapService: ScrapService?
-  let layer = "dev"
-  let logger = true
-  let demoApiKey = "문의"
-        
-  do {
-    scrapService = try ServiceBuilder()
-          .setApiKey(demoApiKey)
-          .setLayer(layer)
-          .setLogger(logger)
-          .build()
-            
-    scrapService?.initialize(completion: { err in
-            
-          })
-        } catch {
-            
-        }
-```
-
-
-2. 사용할 ViewController에 SDK 웹뷰 설정
-- api 호출 전 scrapService를 사용하는 ViewController를 설정하도록 합니다.
-```
-scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
-```
-
-
-3. 사용자 등록
-```
-  scrapService?.signUp(clientId: "uuidString", birth: 1990, gender: .Female, completion: { err in
-        if err != nil {
-
-        } else {
-          print("signUp done")
-        }
-      })
-```
-
-
-4. 커머스 목록 가져오기
-```
-  scrapService?.getCommerces(completion: { err, items in
-        if err != nil {
-
-        } else {
-          print(items ?? [])        
-        }
-      })
-```
-
-
-5. 커머스 로그인
-```
-  scrapService?.startLogin(id:  "testId", pwd: "testPwd", commerceId: "commerceId", completion: { err in          
-        if err != nil {
-        
-        } else {
-        
-        }
-      })
-        
-```
-
-6. 커머스 스크랩
-```
-  scrapService?.startScrapingOrder(id: "testId", pwd: "testPwd", commerceId: "commerceId", completion: { err, scrapingResut in
-        if err != nil {
-        
-        } else {
-
-        }
-      })
-```
-
-
-7. 커머스 로그인계정 목록 가져오기
-```
-  scrapService?.getScrapingUsers(completion: { err, rst in
-        if err != nil {
-        
-        } else {
-
-        }
-      })
-```
-
-
-8. 주문내역 가져오기
-```
-  scrapService?.getOnlineOrders(commerceIds: ["commerceId"], completion: { err, rst in
-        if err != nil {
-
-        } else {
-
-        }
-    })
-```
 ## Usage
 
 <table>
@@ -138,14 +36,15 @@ let logger = true   // 로그유무
 let demoApiKey = "문의" // api Key
 
 do {
-  scrapService = try ServiceBuilder()
+    scrapService = try ServiceBuilder()
         .setApiKey(demoApiKey)
         .setLayer(layer)
         .setLogger(logger)
         .build()
-  scrapService?.initialize(completion: { err in
-  })
+    scrapService?.initialize(completion: { err in
+    })
 } catch {
+
 } 
   </tr>
   <tr>
@@ -193,17 +92,17 @@ do {
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-      scrapService?.signUp(
-            clientId: "testClientid", // 등록할 아이디
-            birth: 1990,              // 태어난 해
-            gender: .Female,          // 성별 (.Male/.Female)
-            completion: { err in
-        if err != nil {
+scrapService?.signUp(
+      clientId: "testClientid", // 등록할 아이디
+      birth: 1990,              // 태어난 해
+      gender: .Female,          // 성별 (.Male/.Female)
+      completion: { err in
+    if err != nil {
 
-        } else {
+    } else {
 
-        }
-      })
+    }
+  })
   </tr>
   <tr>
     <td>설명</td>
@@ -228,12 +127,12 @@ do {
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
 scrapService?.getCommerces(completion: { err, items in
-      if err != nil {
+    if err != nil {
 
-       } else {
-          print(items ?? [])        
-       }
-      })    
+    } else {
+      print(items ?? [])        
+    }
+  })    
   </tr>
   <tr>
     <td>설명</td>
@@ -262,12 +161,12 @@ scrapService?.startScrapingOrder(id: "testId", // 사용자 아이디
                      pwd: "testPwd", // 사용자패스워드
                      commerceId: "commerceId", // 커머스 아이디
                      completion: { err, result in
-      if err != nil {
-        
-       } else {
+    if err != nil {
 
-       }
-     })    
+    } else {
+
+    }
+  })    
   </tr>
   <tr>
     <td>설명</td>
@@ -294,12 +193,12 @@ scrapService?.startScrapingOrder(id: "testId", // 사용자 아이디
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
 scrapService?.getScrapingUsers(completion: { err, rst in
-      if err != nil {
+    if err != nil {
 
-        } else {
+    } else {
 
-        }
-      })    
+    }
+  })    
   </tr>
   <tr>
     <td>설명</td>
@@ -327,12 +226,12 @@ scrapService?.getScrapingUsers(completion: { err, rst in
 scrapService?.getOnlineOrders(
           commerceIds: ["commerceId"], // 커머스 아이디 목록
           completion: { err, rst in
-      if err != nil {
+    if err != nil {
 
-        } else {
+    } else {
 
-        }
-    })
+    }
+  })
   </tr>
   <tr>
     <td>설명</td>
@@ -343,40 +242,3 @@ scrapService?.getOnlineOrders(
     </pre></div></td>
   </tr>
 </table>
-      
-
-# Sample Test
-1. 기능 목록
-
-![image](https://user-images.githubusercontent.com/3009734/226293234-da0638eb-7f0a-4c24-8c40-4a8e0febcb0d.png)
-
-
-2. SignUp
-- 아이디, 태어난 해, 성별을 입력합니다.
-
-![image](https://user-images.githubusercontent.com/3009734/226299486-ae0a1f42-5280-43bf-9431-3f80bb1109a0.png)
-
-
-3. GetCommerces
-- 커머스 목록을 가져옵니다.
-
-![image](https://user-images.githubusercontent.com/3009734/226293561-f95a3d3f-3e4b-46bb-9e0e-e801f75ab1ac.png)
-
-
-4. Scrap
-- startLogin -> startScrapingOrder 순서로 호출하여 커머스 주문내역 스크랩을 합니다.
-
-![image](https://user-images.githubusercontent.com/3009734/226293755-81ced1fa-83f5-4f2b-9499-397561ee38d8.png)
-
-
-5. GetScrapingUsers
-- 로그인 정보가 저장된 커머스 목록을 가져옵니다.
-
-![image](https://user-images.githubusercontent.com/3009734/226295209-f685b9df-b72b-4c6f-b024-4f66b7ca052d.png)
-
-
-6. GetOrders
-- 스크랩된 주문 목록을 가져옵니다.
-
-![image](https://user-images.githubusercontent.com/3009734/226296569-d2c9cd3b-15c0-4a19-949f-888101c03f41.png)
-
