@@ -97,13 +97,7 @@ scrapService?.signUp(
       clientId: "testClientid", // 등록할 아이디
       birth: 1990,              // 태어난 해
       gender: .Female,          // 성별 (.Male/.Female)
-      completion: { err in
-    if err != nil {
-
-    } else {
-
-    }
-  })
+      completion: { err in   })
   </tr>
   <tr>
     <td>설명</td>
@@ -127,7 +121,7 @@ scrapService?.signUp(
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.getCommerces(completion: { err, items in    })    
+scrapService?.getCommerces(completion: { err, items in    })
   </tr>
   <tr>
     <td>설명</td>
@@ -154,7 +148,6 @@ scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
                          pwd: "testPwd",  // 커머스 사용자 패스워드
                          commerceId: "commerceId", // 커머스 아이디
                          completion: { err in   })
- 
   </tr>
   <tr>
     <td>설명</td>
