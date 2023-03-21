@@ -217,7 +217,7 @@ scrapService?.getScrapingUsers(completion: { err, rst in   })
     <th width="30%">스크린샷</th>
   </tr>
   <tr>
-    <td></td>
+    <td>스크랩한 주문 목록 가져오기</td>
     <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226296569-d2c9cd3b-15c0-4a19-949f-888101c03f41.png"></th>
   </tr>
   <tr>
