@@ -24,7 +24,7 @@ end
   var scrapService: ScrapService?
   let layer = "dev"
   let logger = true
-  let demoApiKey = "Nrcoz4wo1Z8mvEuyZzcFt3QUu3cCKpjC4TtijITZ"
+  let demoApiKey = "문의"
         
   do {
     scrapService = try ServiceBuilder()
@@ -119,6 +119,44 @@ scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
         }
     })
 ```
+## Usage
+
+<table>
+  <tr>
+    <th width="30%">사용 예시</th>
+    <th width="30%">스크린샷</th>
+  </tr>
+  <tr>
+    <td>초기화</td>
+    <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226293234-da0638eb-7f0a-4c24-8c40-4a8e0febcb0d.png"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+     var scrapService: ScrapService?
+     let layer = "dev"
+     let logger = true
+     let demoApiKey = "문의"
+        
+     do {
+        scrapService = try ServiceBuilder()
+              .setApiKey(demoApiKey)
+              .setLayer(layer)
+              .setLogger(logger)
+              .build()
+        scrapService?.initialize(completion: { err in
+        })
+     } catch {
+     } 
+  </tr>
+  <tr>
+    <td>설명</td>
+  </tr>
+  <tr>
+    <td width="30%"><div class="highlight highlight-source-swift"><pre>
+      전달받은 apiKey 정보를 입력하새 Builder를 이용해 객체를 생성합니다.
+    </pre></div></td>
+  </tr>
+</table>
 
 
 # Sample Test
