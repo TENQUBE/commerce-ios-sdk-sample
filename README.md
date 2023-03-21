@@ -88,7 +88,7 @@ scrapService?.setWebViewController(vc: self,
     <th width="30%">스크린샷</th>
   </tr>
   <tr>
-    <td></td>
+    <td>사용자 등록</td>
     <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226299486-ae0a1f42-5280-43bf-9431-3f80bb1109a0.png"></th>
   </tr>
   <tr>
@@ -122,7 +122,7 @@ scrapService?.signUp(
     <th width="30%">스크린샷</th>
   </tr>
   <tr>
-    <td></td>
+    <td>커머스 목록 가져오기</td>
     <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226293561-f95a3d3f-3e4b-46bb-9e0e-e801f75ab1ac.png"></th>
   </tr>
   <tr>
@@ -144,22 +144,53 @@ scrapService?.getCommerces(completion: { err, items in
     </pre></div></td>
   </tr>
 </table>
-
       
-    
 <table>
   <tr>
     <th width="30%">사용 예시</th>
     <th width="30%">스크린샷</th>
   </tr>
   <tr>
-    <td></td>
+    <td>커머스 로그인</td>
     <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226293755-81ced1fa-83f5-4f2b-9499-397561ee38d8.png"></th>
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.startScrapingOrder(id: "testId", // 사용자 아이디
-                     pwd: "testPwd", // 사용자패스워드
+scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
+                         pwd: "testPwd",  // 커머스 사용자 패스워드
+                         commerceId: "commerceId", // 커머스 아이디
+                         completion: { err in          
+    if err != nil {
+
+    } else {
+
+    }
+  })
+ 
+  </tr>
+  <tr>
+    <td>설명</td>
+  </tr>
+  <tr>
+    <td width="30%"><div class="highlight highlight-source-swift"><pre>
+      커머스에 로그인을 합니다.
+    </pre></div></td>
+  </tr>
+</table>         
+      
+<table>
+  <tr>
+    <th width="30%">사용 예시</th>
+    <th width="30%">스크린샷</th>
+  </tr>
+  <tr>
+    <td>커머스 스크랩</td>
+    <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226293755-81ced1fa-83f5-4f2b-9499-397561ee38d8.png"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+scrapService?.startScrapingOrder(id: "testId", // 커머스 사용자 아이디
+                     pwd: "testPwd", // 커머스 사용자 패스워드
                      commerceId: "commerceId", // 커머스 아이디
                      completion: { err, result in
     if err != nil {
@@ -178,9 +209,7 @@ scrapService?.startScrapingOrder(id: "testId", // 사용자 아이디
       커머스 주문내역 스크랩을 합니다.
     </pre></div></td>
   </tr>
-</table>
-
-      
+</table>        
     
 <table>
   <tr>
@@ -188,7 +217,7 @@ scrapService?.startScrapingOrder(id: "testId", // 사용자 아이디
     <th width="30%">스크린샷</th>
   </tr>
   <tr>
-    <td></td>
+    <td>커머스 로그인 정보 스크랩</td>
     <th rowspan="9"><img src="https://user-images.githubusercontent.com/3009734/226295209-f685b9df-b72b-4c6f-b024-4f66b7ca052d.png"></th>
   </tr>
   <tr>
@@ -209,9 +238,7 @@ scrapService?.getScrapingUsers(completion: { err, rst in
       로그인 정보가 저장된 커머스 목록을 가져옵니다.                   
     </pre></div></td>
   </tr>
-</table>
-
-      
+</table>    
     
 <table>
   <tr>
