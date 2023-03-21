@@ -127,13 +127,7 @@ scrapService?.signUp(
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.getCommerces(completion: { err, items in
-    if err != nil {
-
-    } else {
-      print(items ?? [])        
-    }
-  })    
+scrapService?.getCommerces(completion: { err, items in    })    
   </tr>
   <tr>
     <td>설명</td>
@@ -159,13 +153,7 @@ scrapService?.getCommerces(completion: { err, items in
 scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
                          pwd: "testPwd",  // 커머스 사용자 패스워드
                          commerceId: "commerceId", // 커머스 아이디
-                         completion: { err in          
-    if err != nil {
-
-    } else {
-
-    }
-  })
+                         completion: { err in   })
  
   </tr>
   <tr>
@@ -192,13 +180,7 @@ scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
 scrapService?.startScrapingOrder(id: "testId", // 커머스 사용자 아이디
                      pwd: "testPwd", // 커머스 사용자 패스워드
                      commerceId: "commerceId", // 커머스 아이디
-                     completion: { err, result in
-    if err != nil {
-
-    } else {
-
-    }
-  })    
+                     completion: { err, result in   })    
   </tr>
   <tr>
     <td>설명</td>
@@ -222,13 +204,7 @@ scrapService?.startScrapingOrder(id: "testId", // 커머스 사용자 아이디
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.getScrapingUsers(completion: { err, rst in
-    if err != nil {
-
-    } else {
-
-    }
-  })    
+scrapService?.getScrapingUsers(completion: { err, rst in   })
   </tr>
   <tr>
     <td>설명</td>
@@ -253,13 +229,7 @@ scrapService?.getScrapingUsers(completion: { err, rst in
     <td><div class="highlight highlight-source-swift"><pre>
 scrapService?.getOnlineOrders(
           commerceIds: ["commerceId"], // 커머스 아이디 목록
-          completion: { err, rst in
-    if err != nil {
-
-    } else {
-
-    }
-  })
+          completion: { err, rst in   })
   </tr>
   <tr>
     <td>설명</td>
