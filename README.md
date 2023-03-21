@@ -68,7 +68,8 @@ do {
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-     scrapService?.setWebViewController(vc: self, frame: self.view.bounds) 
+scrapService?.setWebViewController(vc: self, 
+                                   frame: self.view.bounds) 
   </tr>
   <tr>
     <td>설명</td>
