@@ -144,10 +144,11 @@ scrapService?.getCommerces(completion: { err, items in    })
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
-                         pwd: "testPwd",  // 커머스 사용자 패스워드
-                         commerceId: "commerceId", // 커머스 아이디
-                         completion: { err in   })
+scrapService?.startLogin(
+                    id:  "testId",   // 커머스 사용자 아이디
+                    pwd: "testPwd",  // 커머스 사용자 패스워드
+                    commerceId: "commerceId", // 커머스 아이디
+                    completion: { err in   })
   </tr>
   <tr>
     <td>설명</td>
@@ -170,10 +171,11 @@ scrapService?.startLogin(id:  "testId",   // 커머스 사용자 아이디
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
-scrapService?.startScrapingOrder(id: "testId", // 커머스 사용자 아이디
-                     pwd: "testPwd", // 커머스 사용자 패스워드
-                     commerceId: "commerceId", // 커머스 아이디
-                     completion: { err, result in   })    
+scrapService?.startScrapingOrder(
+                  id: "testId", // 커머스 사용자 아이디
+                  pwd: "testPwd", // 커머스 사용자 패스워드
+                  commerceId: "commerceId", // 커머스 아이디
+                  completion: { err, result in   })    
   </tr>
   <tr>
     <td>설명</td>
