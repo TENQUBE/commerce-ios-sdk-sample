@@ -29,16 +29,19 @@ class ScrapViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Scrap"
+//        setDebugWebView(hidden: false)
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         
-        appDelegate.scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
-        
+        print(self.view.bounds)
+         
         resultTextView.text = ""
         
         setPickerViews()
         
         getCommerces()
+        
+        appDelegate.scrapService?.setWebViewController(vc: self, frame: self.view.bounds)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +86,26 @@ class ScrapViewController: UIViewController {
         startScrap()
     }
     
+    func setDebugWebView(hidden: Bool) {
+        for vc in self.children {
+            if let _vc = vc as? WebViewController {
+                var webview = _vc.webView
+                
+                print(webview?.bounds)
+                DispatchQueue.main.async {
+                    _vc.view?.isHidden = hidden
+                    let url = _vc.webView?.url?.absoluteString ?? "()"
+                    let alert = UIAlertController(title: "URL", message: url,
+                                                  preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     func startScrap(){
         guard let _id = self.idTextField.text, let _pwd = self.pwdTextField.text else {
             showAlert("아이디와 패스워드를 입력해주세요")
@@ -102,23 +125,27 @@ class ScrapViewController: UIViewController {
         self.scrapButton.isEnabled = false
         appDelegate.scrapService?.startLogin(id:  _id, pwd: _pwd, commerceId: _commerceId, completion: { err in
             
-            DispatchQueue.main.async {
                 if err != nil {
-                    self.printError(err: err as! CommonError)
-                    
-                    self.scrapButton.isEnabled = true
+                    DispatchQueue.main.async {
+                        self.printError(err: err as! CommonError)
+                        
+                        self.scrapButton.isEnabled = true
+//                        self.setDebugWebView(hidden: false)
+                    }
                 } else {
                     self.appDelegate.scrapService?.startScrapingOrder(id: _id, pwd: _pwd, commerceId: _commerceId, completion: { err, scrapingResut in
                         
-                        if err != nil {
-                            self.printError(err: err as! CommonError)
-                        } else {
-                            self.resultTextView.text = "code: \(scrapingResut?.code.rawValue)\nmessage: \(scrapingResut?.msg ?? "")"
+                        DispatchQueue.main.async {
+                            if err != nil {
+                                self.printError(err: err as! CommonError)
+                            } else {
+                                self.resultTextView.text = "code: \(scrapingResut?.code.rawValue)\nmessage: \(scrapingResut?.msg ?? "")"
+                            }
+                            self.scrapButton.isEnabled = true
+                            self.setDebugWebView(hidden: false)
                         }
-                        self.scrapButton.isEnabled = true
                     })
                 }
-            }
         })
     }
     
